@@ -12,26 +12,9 @@ const connect = function () {
     console.log('Successfully connected to game server');
     conn.write("Name: FI");
   });
-  //moving the snake
-  conn.on("connect", () => {
-    conn.write("connected");
-    // setTimeout(() => {
-    //   conn.write("Move: down", () => { console.log("snake moved down one bit")});
-    // }, 50);
-    // setTimeout(() => {
-    //   conn.write("Move: down", () => { console.log("snake moved down one bit")});
-    // }, 50);
-    // setTimeout(() => {
-    //   conn.write("Move: left", () => { console.log("snake moved left one bit")});
-    // }, 50);
-  });
-
-
   conn.setEncoding("utf8");
   conn.on("data", (data) => {
-    console.log(data);
-    // conn.write("Move: left");
-    
+    console.log(data);    
   });
   // interpret incoming data as text
 
