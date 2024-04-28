@@ -12,22 +12,22 @@ const setupInput = (conn) => {
 };
 
 const handleUserInput = function(key) {
+  key = key.toLowerCase();
   switch(key){
     case 'w':
-    case 'W':
       connection.write(`Move: up`);
       break;
     case 'a':
-    case 'A':
       connection.write(`Move: left`);
       break;
     case 's':
-    case 'S':
       connection.write(`Move: down`);
       break;
     case 'd':
-    case 'D':
       connection.write(`Move: right`);
+      break;
+    case '\u0020':
+      connection.write(`Say: Damn!!`);
       break;
     case '\u0003':
       process.exit();
@@ -35,6 +35,4 @@ const handleUserInput = function(key) {
   }
     
 };
-
-
 module.exports = setupInput;
